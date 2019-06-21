@@ -1,27 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar'
+import { Layout, Navigation, Header, Drawer, Content } from "react-mdl";
+import AppFooter from './components/footer';
+import Main from './components/main';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="demo-big-content">
+          <Layout>
+              <Header className="header-color" title="Fastor" scroll>
+                  <Navigation>
+                      <a href="/resume">Resume</a>
+                      <a href="/aboutme">About Me</a>
+                      <a href="/project">Projects</a>
+                      <a href="/contact">Contact</a>
+                  </Navigation>
+              </Header>
+              <Drawer title="Fastor">
+                  <Navigation>
+                      <a href="/resume">Resume</a>
+                      <a href="/aboutme">About Me</a>
+                      <a href="/project">Projects</a>
+                      <a href="/contact">Contact</a>
+                  </Navigation>
+              </Drawer>
+              <Content>
+                  <div className="page-content" />
+                  <Main/>
+              </Content>
+              <AppFooter />
+          </Layout>
+      </div>
   );
 }
 
